@@ -55,14 +55,21 @@ class KitobAdmin(admin.ModelAdmin):
 readonly_fields = ('qoshilgan_sana',)
 
 fieldsets = (
-    ('Asosiy ma\'lumot', {
-    'fields': ('nomi', 'muallif', 'janrlar'),
-    }),
-    ('Qo\'shimcha', {
-    'fields': ('til', 'nashr_yili', 'narx', 'mavjud', 'qoshilgan_sana'),
-    'classes': ('collapse',),
-    }),
-)
+        ("Asosiy ma'lumot", {"fields": ("nomi", "muallif", "janrlar")}),
+        (
+            "Qo'shimcha ma'lumotlar",
+            {
+                "fields": (
+                    "til",
+                    "nashr_yili",
+                    "narx",
+                    "mavjud",
+                    "qoshilgan_sana",
+                ),
+                "classes": ("collapse",),  # Yashirin blok qilish uchun
+            },
+        ),
+    )
 list_per_page= 20
 
 
